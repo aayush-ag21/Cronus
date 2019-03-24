@@ -21,19 +21,19 @@ pi.set_mode(LFL, pigpio.OUTPUT)
 pi.set_mode(LBU, pigpio.OUTPUT)
 pi.set_mode(LBL, pigpio.OUTPUT)
 
-def servo(pin,degree) :
-    degree=int(degree*2000/180 + 500)
+def servo(pin,degree,scale=2000) :
+    degree=int(degree*scale/180 + 500)
     pi.set_servo_pulsewidth(pin, degree)
 
 def height(h, tx, ty) :
-      servo(RFU,min(max(0,(h+tx+ty)),180))
-      servo(RFL,min(max(0,(h+tx+ty)),180))
-      servo(RBU,min(max(0,180-(h+tx-ty)),180))
-      servo(RBL,min(max(0,(h+tx-ty)),180))
-      servo(LFU,min(max(0,105-(h-tx+ty)),180))
-      servo(LFL,min(max(0,(h-tx+ty)),180))
-      servo(LBU,min(max(0,(h-tx-ty)),180))
-      servo(LBL,min(max(0,(h-tx-ty)),180))
+      servo(RFU,min(max(15,(h+tx+ty)),75))
+      servo(RFL,min(max(15,(h+tx+ty)),75))
+      servo(RBU,min(max(15,180-(h+tx-ty)),75))
+      servo(RBL,min(max(15,(h+tx-ty)),75))
+      servo(LFU,min(max(15,105-(h-tx+ty)),75))
+      servo(LFL,min(max(15,(h-tx+ty)),75))
+      servo(LBU,min(max(15,(h-tx-ty)),75))
+      servo(LBL,min(max(15,(h-tx-ty)),75))
 
 value = [0,0,0]
 while 1:

@@ -1,7 +1,8 @@
 import pigpio
 pi= pigpio.pi()
+pin=int(input('pin'))
 
-pi.set_mode(2,pigpio.OUTPUT)
+pi.set_mode(pin,pigpio.OUTPUT)
 
 def servo(pin1,degree) :
     degree=int(degree*2000/180 + 500)
@@ -14,5 +15,5 @@ while(1):
 	angle= int(input('Enter angle'))
 	if  angle is -1:
 		break
-	servo(2,angle)
+	servo(pin,angle)
 pigpio.stop()

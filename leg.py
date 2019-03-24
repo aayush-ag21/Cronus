@@ -3,8 +3,8 @@ import pigpio
 
 pi= pigpio.pi()
 
-RFU=2
-RFL=3
+RFU=4
+RFL=17
 
 pi.set_mode(RFU, pigpio.OUTPUT)
 pi.set_mode(RFL, pigpio.OUTPUT)
@@ -15,7 +15,7 @@ def servo(pin1,pin2,degree) :
     pi.set_servo_pulsewidth(pin2, degree)
 
 def height(h, tx, ty) :
-      servo(RFU, RFL,110- (h+tx+ty))
+      servo(RFU, RFL,165- (h+tx+ty))
 
 value = [0,0,0]
 while 1:
