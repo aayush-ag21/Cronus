@@ -13,8 +13,8 @@ MRB1=12
 MRB2=13
 MRB3=19
 
-MLF1=15
-MLF2=18
+MLF1=18
+MLF2=15
 MLF3=14
 
 MLB1=24
@@ -48,9 +48,9 @@ def motor(pin1, pin2, pin3, s):     #front pin1, back pin2 , PWM pin3
         
 def holo(x,y,r):  #positive r is anticlockwise
      motor(MRF1,MRF2,MRF3, (y-x)/(2**0.5)+r)
-     motor(MLB1,MLB2,MLB3, (y-x)/(2**0.5)+r)
-     motor(MLF1,MLF2,MLF3,(y+x)/(2**0.5)-r)
-     motor(MRB1,MRB2,MRB3, (y+x)/(2**0.5)-r)
+     motor(MLB1,MLB2,MLB3, (y-x)/(2**0.5)-r)
+     motor(MLF1,MLF2,MLF3,1.15*((y+x)/(2**0.5)-r))
+     motor(MRB1,MRB2,MRB3, (y+x)/(2**0.5)+r)
      
 #positive deg is right down
 

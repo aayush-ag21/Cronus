@@ -3,9 +3,9 @@ import time
 import pigpio
 pi= pigpio.pi()
 
-MRF1=21
-MRF2=26
-MRF3=20
+MRF1=24
+MRF2=25
+MRF3=23
 
 pi.set_mode(MRF1, pigpio.OUTPUT)
 pi.set_mode(MRF2, pigpio.OUTPUT)
