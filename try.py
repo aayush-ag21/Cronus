@@ -1,2 +1,2 @@
-import sys
-sys.stdout("echo hi")
+for i in range(7):
+	print (i)
