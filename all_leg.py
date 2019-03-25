@@ -5,7 +5,7 @@ pi= pigpio.pi()
 
 RFU=2
 RFL=3
-RBU=4	#INVERT
+RBU=8	#INVERT
 RBL=17
 LFU=27	#INVERT
 LFL=22
@@ -28,11 +28,11 @@ def servo(pin,degree,scale=2000) :
 def height(h, tx, ty) :
       servo(RFU,min(max(15,(h+tx+ty)),75))
       servo(RFL,min(max(15,(h+tx+ty)),75))
-      servo(RBU,min(max(15,180-(h+tx-ty)),75))
+      servo(RBU,180-min(max(15,(h+tx-ty)),75))
       servo(RBL,min(max(15,(h+tx-ty)),75))
-      servo(LFU,min(max(15,105-(h-tx+ty)),75))
+      servo(LFU,105-min(max(15,(h-tx+ty)),75))
       servo(LFL,min(max(15,(h-tx+ty)),75))
-      servo(LBU,min(max(15,(h-tx-ty)),75))
+      servo(LBU,min(max(15,(h-tx-ty)),75),2400)
       servo(LBL,min(max(15,(h-tx-ty)),75))
 
 value = [0,0,0]
