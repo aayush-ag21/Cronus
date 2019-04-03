@@ -5,7 +5,7 @@ pi= pigpio.pi()
 pin=int(input('pin'))
 
 pi.set_mode(pin,pigpio.OUTPUT)
-pi.set_servo_pulsewidth(pin,500)
+pi.set_servo_pulsewidth(pin,0)
 
 def servo(pin1,degree):
     degree=min(max(10*(int((degree*2000/180 + 500)/10)),500),2500)
