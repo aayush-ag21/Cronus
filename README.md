@@ -7,4 +7,4 @@ The purpose of this project was to showcase a new design for a security bot with
 
 The 8 servos and 4 BO motors attached to omni wheels are controlled by the raspberryPi. The raspberry pi takes video footage and uploads it to a dropbox drive. The video is read from this dropbox drive and motion detection, Face and eye recognition is carried out on the feed.
 
-<img src="https://github.com/aayush-ag21/Cronus/blob/master/image.jpeg" width="500px" height="850px" />
+<img src="https://github.com/aayush-ag21/Cronus/blob/master/image.jpeg" width="850px" height="600px" />
